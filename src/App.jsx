@@ -1,9 +1,7 @@
-import {Test} from './components/Container'
+import { Container } from "./components/Container";
 
 function App() {
- return (
- <Test>aaa</Test>
- )
+  return <Container />;
 }
 
-export default App
+export default App;
