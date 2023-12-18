@@ -1,17 +1,20 @@
 export function TasksList() {
   return (
-    <div>
-      <ul>
-        <li className="flex gap-2 align-middle">
-          <span className="w-[100%] text-xs">Zadanie 1</span>
-          <button className="rounded-sm border border-main px-2 text-xs text-main">
-            Zrobione
-          </button>
-          <button className="rounded-sm border border-main px-2 text-xs text-main">
-            Usuń
-          </button>
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li>
+        <hr className="mt-3" />
+        <div className="mt-6 flex justify-between align-middle">
+          <p className="w-max">Zapłacić rachunki</p>
+          <div className="flex gap-2">
+            <button className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white">
+              Zrobione
+            </button>
+            <button className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white">
+              Usuń
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
   );
 }
