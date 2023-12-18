@@ -8,10 +8,20 @@ function App() {
   const [openNewTask, handleOpenNewTask] = useState(true);
   const [tasksList, setTasksList] = useState([]);
 
-  console.log(tasksList);
-
   function addTask(task) {
     setTasksList((prevData) => [...prevData, task]);
+  }
+
+  function updateTask(taskId) {
+    setTasksList((prevData) =>
+      prevData.map((task) =>
+        task.id === taskId ? { ...task, isFinished: true } : task,
+      ),
+    );
+  }
+
+  function deleteTask(taskId) {
+    setTasksList((prevData) => prevData.filter((task) => task.id !== taskId));
   }
 
   return (
@@ -29,7 +39,11 @@ function App() {
           />
         )}
 
-        <TasksList tasksList={tasksList} />
+        <TasksList
+          tasksList={tasksList}
+          updateTask={updateTask}
+          deleteTask={deleteTask}
+        />
       </div>
     </div>
   );
