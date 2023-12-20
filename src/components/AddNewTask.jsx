@@ -12,8 +12,8 @@ export function AddNewTask({ tasksList, handleOpenNewTask }) {
   return (
     <div className="flex justify-between">
       <div>
-        <h1 className="text-4xl font-medium">Do zrobienia</h1>
-        <h2 className="text-3xl font-medium">{tasksLength}</h2>
+        <h1 className="text-3xl font-medium">Do zrobienia</h1>
+        <h2 className="text-2xl font-medium">{tasksLength}</h2>
       </div>
       <div>
         <button
