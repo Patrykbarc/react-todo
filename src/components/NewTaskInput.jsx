@@ -16,11 +16,13 @@ export function NewTaskInput({ addTask, handleCloseNewTask }) {
         onChange={handleTaskName}
       />
       <button
-        className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
-        onClick={() => (
-          addTask({ name: taskName, id: Date.now(), isFinished: false }),
-          handleCloseNewTask(true)
-        )}
+        className="h-fit cursor-pointer rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white disabled:cursor-not-allowed disabled:border-none disabled:bg-slate-400 disabled:text-slate-200"
+        disabled={taskName == ""}
+        onClick={() =>
+          taskName !== "" &&
+          (addTask({ name: taskName, id: Date.now(), isFinished: false }),
+          handleCloseNewTask(true))
+        }
       >
         Dodaj
       </button>

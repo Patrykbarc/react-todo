@@ -6,7 +6,7 @@ export function AddNewTask({ tasksList, handleOpenNewTask }) {
   } else if (tasksList.length > 1 && tasksList.length < 5) {
     tasksLength = `${tasksList.length} zadania`;
   } else {
-    tasksLength = `${tasksList.length} zadań`;
+    tasksLength = `Brak zadań`;
   }
 
   return (
