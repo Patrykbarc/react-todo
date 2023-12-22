@@ -1,8 +1,28 @@
-# React + Vite
+# React Todo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this project, my main focus was on mastering the fundamental aspects of React features. These included:
 
-Currently, two official plugins are available:
+- **Exporting functions**
+- **Creating separate modules**
+- **Passing props**
+- **Conditional rendering**
+- **Event handling**
+- **Using the useState hook**
+- **State lifting**
+- **Using external libraries**
+- **Practicing with the Tailwind CSS library**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Additional Notes and Achievements
+
+While working on these fundamental aspects, I also achieved experience with external libraries the following:
+
+- [Drag and drop library](@https://github.com/atlassian/react-beautiful-dnd)
+- [Modal library](@https://github.com/reactjs/react-modal)
+
+## Future Enhancements
+
+To further enhance the project, consider incorporating the following:
+
+- Establish communication with a backend server to enable data persistence.
+- Explore technologies like [Express](https://expressjs.com/) for backend development.
+- Database integration for storing and retrieving task data.

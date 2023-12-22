@@ -23,8 +23,6 @@ function App() {
   const [taskName, setTaskName] = useState("");
   const [deletedTasks, setDeletedTasks] = useState(initialDeletedTasks);
 
-  console.log(deletedTasks);
-
   function addTask(task) {
     setTasksList((prevData) => [...prevData, task]);
   }
