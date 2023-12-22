@@ -1,5 +1,10 @@
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-export function TasksList({ tasksList, setTasksList, deleteTask }) {
+export function TasksList({
+  tasksList,
+  setTasksList,
+  deleteTask,
+  restoreDeletedTaks: restoreDeletedTasks,
+}) {
   function handleOnDragEnd(result) {
     const items = Array.from(tasksList);
     const [reordededItem] = items.splice(result.source.index, 1);
@@ -49,7 +54,10 @@ export function TasksList({ tasksList, setTasksList, deleteTask }) {
                         <div>
                           <button
                             className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
-                            onClick={() => deleteTask(id)}
+                            onClick={() => (
+                              restoreDeletedTasks({ name, id, isFinished }),
+                              deleteTask(id)
+                            )}
                           >
                             Usuń
                           </button>

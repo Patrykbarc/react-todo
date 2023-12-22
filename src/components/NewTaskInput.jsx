@@ -1,11 +1,9 @@
 import { useState } from "react";
 
-export function NewTaskInput({ setTasksList, handleCloseNewTask }) {
+export function NewTaskInput({ addTask, handleCloseNewTask }) {
   const [taskName, setTaskName] = useState("");
 
-  function addTask(task) {
-   setTasksList((prevData) => [...prevData, task]);
- }
+
 
   function handleTaskName(e) {
     setTaskName(e.target.value);

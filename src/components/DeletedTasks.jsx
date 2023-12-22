@@ -1,10 +1,14 @@
 import Modal from "react-modal";
 import { useState } from "react";
 
-export function DeletedTasks({ deletedTasks }) {
+export function DeletedTasks({
+  deletedTasks,
+  restoreTask,
+  updateDeletedTasksArr,
+}) {
   const customStyles = {
     content: {
-      top: "25%",
+      top: "50%",
       left: "50%",
       right: "auto",
       bottom: "auto",
@@ -38,16 +42,27 @@ export function DeletedTasks({ deletedTasks }) {
       >
         <div className="mb-5 flex justify-between align-middle">
           <h2 className="text-3xl font-medium">Usunięte zadania</h2>
-          <button onClick={closeModal}>x</button>
+          {/* <button onClick={closeModal}>x</button> */}
         </div>
         <form onSubmit={(e) => e.preventDefault()}>
           <ul>
             {deletedTasks.map(({ id, name }) => (
-              <div key={`task-${id}`} className="flex justify-between">
-                <li className="border-b py-2 last-of-type:border-none">
-                  {name}
-                </li>
-                <button className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white">
+              <div
+                key={`task-${id}`}
+                className="flex justify-between border-b py-2 last-of-type:border-none"
+              >
+                <li>{name}</li>
+                <button
+                  onClick={() => (
+                    restoreTask({
+                      name: name,
+                      id: Date.now(),
+                      isFinished: false,
+                    }),
+                    updateDeletedTasksArr(id)
+                  )}
+                  className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
+                >
                   Przywróć
                 </button>
               </div>
