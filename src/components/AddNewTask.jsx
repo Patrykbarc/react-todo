@@ -1,19 +1,28 @@
 export function AddNewTask({ tasksList, handleOpenNewTask }) {
-  let tasksLength;
+  const tasksLength = tasksList.length;
+  let tasksLengthInfo;
 
-  if (tasksList.length === 1) {
-    tasksLength = `${tasksList.length} zadanie`;
-  } else if (tasksList.length > 1 && tasksList.length < 5) {
-    tasksLength = `${tasksList.length} zadania`;
-  } else {
-    tasksLength = `Brak zadań`;
+  switch (tasksLength) {
+    case 0:
+      tasksLengthInfo = "Brak zadań";
+      break;
+    case 1:
+      tasksLengthInfo = `${tasksLength} zadanie`;
+      break;
+    case 2:
+    case 3:
+    case 4:
+      tasksLengthInfo = `${tasksLength} zadania`;
+      break;
+    default:
+      tasksLengthInfo = `${tasksLength} zadań`;
   }
 
   return (
     <div className="flex justify-between">
       <div>
-        <h1 className="text-3xl font-medium">Do zrobienia</h1>
-        <h2 className="text-2xl font-medium">{tasksLength}</h2>
+        <h1 className="mb-1 text-3xl font-medium">Do zrobienia</h1>
+        <h2 className="text-2xl font-medium">{tasksLengthInfo}</h2>
       </div>
       <div>
         <button
