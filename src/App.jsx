@@ -13,10 +13,17 @@ function App() {
     { name: "Zjeść obiad", id: 3, isFinished: false },
   ]);
   const [taskName, setTaskName] = useState("");
+  const [deletedTasks, setDeletedTasks] = useState([
+    { name: "Zrobić pranie", id: 7, isFinished: false },
+    { name: "Zapłacić rachunki", id: 8, isFinished: false },
+    { name: "Zapłacić rachunki", id: 8, isFinished: false },
+  ]);
 
   function deleteTask(taskId) {
     setTasksList((prevData) => prevData.filter((task) => task.id !== taskId));
   }
+
+  function handleDeletedTaskList() {}
 
   return (
     <div className="container flex w-[450px] flex-col gap-4 rounded-lg bg-white p-5">
@@ -40,6 +47,9 @@ function App() {
           setTasksList={setTasksList}
           deleteTask={deleteTask}
         />
+      )}
+      {deletedTasks.length !== 0 && (
+        <DeletedTasks deletedTasks={deletedTasks} />
       )}
     </div>
   );
