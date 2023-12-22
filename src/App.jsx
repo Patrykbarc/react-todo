@@ -14,22 +14,6 @@ function App() {
   ]);
   const [taskName, setTaskName] = useState("");
 
-  function addNewTask(e) {
-    setTaskName(e.target.value);
-  }
-
-  function addTask(task) {
-    setTasksList((prevData) => [...prevData, task]);
-  }
-
-  function updateTask(taskId) {
-    setTasksList((prevData) =>
-      prevData.map((task) =>
-        task.id === taskId ? { ...task, isFinished: true } : task,
-      ),
-    );
-  }
-
   function deleteTask(taskId) {
     setTasksList((prevData) => prevData.filter((task) => task.id !== taskId));
   }
@@ -43,10 +27,10 @@ function App() {
         />
       ) : (
         <NewTaskInput
-          addTask={addTask}
+          setTasksList={setTasksList}
           handleCloseNewTask={handleOpenNewTask}
           taskName={taskName}
-          addNewTask={addNewTask}
+          setTaskName={setTaskName}
         />
       )}
 
@@ -54,12 +38,9 @@ function App() {
         <TasksList
           tasksList={tasksList}
           setTasksList={setTasksList}
-          updateTask={updateTask}
           deleteTask={deleteTask}
         />
       )}
-
-      <DeletedTasks />
     </div>
   );
 }

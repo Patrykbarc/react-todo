@@ -1,5 +1,5 @@
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-export function TasksList({ tasksList, setTasksList }) {
+export function TasksList({ tasksList, setTasksList, deleteTask }) {
   function handleOnDragEnd(result) {
     const items = Array.from(tasksList);
     const [reordededItem] = items.splice(result.source.index, 1);
@@ -16,11 +16,6 @@ export function TasksList({ tasksList, setTasksList }) {
       ),
     );
   }
-
-  function deleteTask(taskId) {
-    setTasksList((prevData) => prevData.filter((task) => task.id !== taskId));
-  }
-
   return (
     <form onSubmit={(e) => e.preventDefault()}>
       <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -36,7 +31,7 @@ export function TasksList({ tasksList, setTasksList }) {
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                     >
-                      <div className="flex justify-between p-3 align-middle">
+                      <div className="flex justify-between py-3 align-middle">
                         <div className="flex w-max gap-2">
                           <input
                             type="checkbox"
@@ -52,14 +47,6 @@ export function TasksList({ tasksList, setTasksList }) {
                         </div>
 
                         <div className="flex gap-2">
-                          {/* {!isFinished && (
-                            <button
-                              className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
-                              onClick={() => updateTask(id)}
-                            >
-                              Zrobione
-                            </button>
-                          )} */}
                           <button
                             className="h-fit rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
                             onClick={() => deleteTask(id)}
