@@ -16,8 +16,8 @@ In this project, my main focus was on mastering the fundamental aspects of React
 
 While working on these fundamental aspects, I also achieved experience with external libraries the following:
 
-- [Drag and drop library](@https://github.com/atlassian/react-beautiful-dnd)
-- [Modal library](@https://github.com/reactjs/react-modal)
+- [Drag and drop library](https://github.com/atlassian/react-beautiful-dnd)
+- [Modal library](https://github.com/reactjs/react-modal)
 
 ## Future Enhancements
 
