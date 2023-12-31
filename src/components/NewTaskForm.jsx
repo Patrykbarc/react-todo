@@ -25,7 +25,7 @@ export function NewTaskInput({ addTask, handleCloseNewTask }) {
 
       <button
         className="h-fit cursor-pointer rounded border border-blue-500 bg-transparent px-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white disabled:cursor-not-allowed disabled:border-slate-400 disabled:bg-slate-400 disabled:text-slate-200"
-        disabled={taskName == ""}
+        disabled={taskName.trim().length === 0}
         onClick={() =>
           taskName !== "" &&
           (addTask({ name: taskName, id: Date.now(), isFinished: false }),

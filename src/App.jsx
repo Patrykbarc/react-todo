@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { TasksList } from "./components/TasksList";
 import { AddNewTask } from "./components/AddNewTask";
-import { NewTaskInput } from "./components/NewTaskInput";
+import { NewTaskInput } from "./components/NewTaskForm";
 import { DeletedTasks } from "./components/DeletedTasks";
 
 const initialTaskList = [
