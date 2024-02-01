@@ -1,5 +1,9 @@
 # React Todo
 
+## Deploy
+
+https://react-todo-patrykbarc.netlify.app/
+
 In this project, my main focus was on mastering the fundamental aspects of React features. These included:
 
 - **Exporting functions**
